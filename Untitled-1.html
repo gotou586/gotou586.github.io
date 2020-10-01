@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title lang="ja">HTMLの基本文法</title>
+        <script type="text/javascript">
+            function submitbtn() {
+                var sei=document.getElementById("sei").value;
+                var s=sei.length;
+
+                var mei=document.getElementById("mei").value;  
+                var m=mei.length;
+
+                var yuubin=document.getElementById("yubin").value;
+                var y=yuubin.length;
+
+                 var zyuusyo=document.getElementById("zyuusyo").value;
+                 var z=zyuusyo.length;
+
+                 var flag=false;
+              
+                // 「OK」ボタン押下時
+                if (confirm('申込しますか')) {
+                    if(s==0){
+                        alert("姓を入力してください");
+                         return false;
+                    }else{
+                       // 姓の文字数チェック
+                     if(s>5){
+                         alert("姓は5文字以内で入力してください");
+                         return false;
+                    }else{
+                        if(m==0){
+                            alert("名を入力してください");
+                         return false;
+                        }else{
+                            if(m>5){
+                                alert("名は5文字以内で入力してください");
+                                return false; 
+                            }else{
+                                if(y==0){
+                                    alert("郵便番号を入力してください");
+                                    return false; 
+                                }else{
+                                    if(y>10){
+                                        alert("郵便番号は10文字以内で入力してください");
+                                        return false;  
+                                    }else{
+                                        if(z==0){
+                                            alert("住所を入力してください");
+                                            return false; 
+                                        }else{
+                                            if(z>20){
+                                                alert("住所は20文字以内で入力してください");
+                                        return false;
+                                            }else{
+                                                for(var i=0;i<document.s.example.length;i++){
+                                                    if(document.s.example[i].checked){
+                                                        flag = true;    
+                                                        location.href = "http://www.google.co.jp/";
+                                                    }
+                                                }if(!flag){ 
+                                                alert("性別が選択されていません。");
+                                                return false;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+
+                }
+                }
+
+                }
+               
+           
+        </script>
+    </head>
+    <body>
+        <form name="s"action="">
+        <h1>申し込み方法</h1>
+
+        <ol>
+            <li>ご連絡先の入力<br>以下のフォームへ必要事項を入力し、申込ボタンをクリックしてください</li>
+            <li>希望コースの確認<br>後日、申込希望のコースについての確認をさせていただきます。</li>
+            <li>受講票発送<br>受講が確定しましたら郵送にて受講票を送付いたします。</li>
+          </ol>
+          <table border="1">
+             
+          <tr> 
+              <td>受講者名</td><td>姓<input type="text" value=""  id="sei">名<input type="text" value="" id="mei"></td>
+        </tr> 
+        <tr>
+            <td>性別</td><td><input type="radio" name="example" value="選択肢1">男性<input type="radio" name="example" value="選択肢2">女性<input type="radio" name="example" value="選択肢3">その他</td>
+      </tr> 
+      <tr>
+        <td>郵便番号</td><td><input type="text" value="" id="yubin"></td>
+ 　　 </tr> 
+ 　　<tr >
+    <td>住所</td><td><input type="text" value=""size="50" id="zyuusyo"></td>
+　　 </tr> 
+
+</table>
+<table>
+<tr>
+    <td><input type="button"name="bt01" value="申込" onClick="submitbtn();"></td>
+</table>
+　　 </tr> 
+<br>
+
+        <tr>
+              <th><a href=”about.html”>会場情報へ</a></th>
+            </tr>
+        </form>
+          
+       
+      
+    </body>
+    </html>
+          
